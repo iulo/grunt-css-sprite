@@ -13,7 +13,6 @@ module.exports = function(grunt) {
         defaultOptions.spritepath = null;
 
         var options = this.options(defaultOptions);
-
         assert(options.imagepath, 'An `imagepath` parameter was not provided');
         assert(options.spritedest, 'An `spritedest` parameter was not provided');
 
@@ -38,23 +37,23 @@ module.exports = function(grunt) {
                 }
 
                 if(data.cssData === null) {
-                    console.log(options.cssfile, cssDest);
+                    // 无切片数据的css 仅重新copy
+                    var txt = 'Done! [no slice just Copied] ' + options.cssfile + ' -> ' + cssDest;
+                    console.log('\x1b[90m' + txt + '\x1b[0m');
                     grunt.file.copy(options.cssfile, cssDest);
-                    grunt.log.writelns('Done! [Copied] -> ' + cssDest);
-
                     return callback(null);
                 }
 
                 // write css
                 grunt.file.write(cssDest, data.cssData);
-                grunt.log.writelns('Done! [Created] -> ' + cssDest);
+                grunt.log.writelns('Done! [Created] -> ' + cssDest['cyan']);
 
                 // write sprite
                 var spriteData = data.spriteData;
                 grunt.file.write(spriteData.imagePath, data.spriteData.image, {
                     encoding: 'binary'
                 });
-                grunt.log.writelns('Done! [Created] -> ' + spriteData.imagePath);
+                grunt.log.writelns('Done! [Created] -> ' + spriteData.imagePath['green']);
 
                 // write retina sprite
                 var retinaSpriteData = data.retinaSpriteData;
@@ -62,7 +61,7 @@ module.exports = function(grunt) {
                     grunt.file.write(retinaSpriteData.imagePath, data.retinaSpriteData.image, {
                         encoding: 'binary'
                     });
-                    grunt.log.writelns('Done! [Created] -> ' + retinaSpriteData.imagePath);
+                    grunt.log.writelns('Done! [Created] -> ' + retinaSpriteData.imagePath['green']);
                 }
 
                 callback(null);
