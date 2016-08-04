@@ -1,7 +1,7 @@
 var path = require('path');
 var async = require('async');
 var assert = require('assert');
-var cssSpriteSmith = require('css-spritesmith');
+var cssSpriteSmith = require('css2spritesmith');
 
 module.exports = function(grunt) {
     "use strict";
