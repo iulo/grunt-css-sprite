@@ -31,7 +31,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "spritesmith": "^1.1.0",
-    "css-spritesmith": "^0.0.4"
+    "css2spritesmith": "^0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
