@@ -1,7 +1,7 @@
 {
   "name": "grunt-css2sprite",
   "description": "A grunt plugin to help front engineer creating css sprite.for from laoshu133/grunt-css-sprite @0.2.2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/iulo/grunt-css2sprite",
   "author": {
     "name": "iulo",
@@ -31,7 +31,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "spritesmith": "^1.1.0",
-    "css2spritesmith": "^0.0.1"
+    "css2spritesmith": "^0.0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
